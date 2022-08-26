@@ -20,6 +20,7 @@ def water_graph(city):
     plot_w = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return plot_w
 
+<<<<<<< Updated upstream
 
 df = pd.read_csv('water.csv',encoding= 'unicode_escape')
 
@@ -59,6 +60,13 @@ def predict(inp):
     x_new=[[st,ct]]
     pred_new = classifier.predict(x_new)  
     return pred_new
+=======
+def High_val(state, city):
+    df = pd.read_csv('D:/Hackathons/Delta/water.csv',encoding= 'unicode_escape')
+    df2 = df[df['State Name'] == state]
+    df2 = df2[df2['District Name'] == city]
+    return df2["Quality Parameter"].value_counts().idxmax()
+>>>>>>> Stashed changes
 # ROUTES
 @app.route('/')
 def home():
@@ -70,20 +78,7 @@ def water():
     state = state.upper()
     city = request.form['city']
     city = city.upper()
-    features = []
-    features.append(state)
-    features.append(city)
-    output = predict(features)
-    if output == 0:
-        chem = "Arsenic"
-    elif output == 1:
-        chem = "Fluoride"
-    elif output == 2:
-        chem = "Iron"
-    elif output == 3:
-        chem = "Nitrate"
-    else:
-        chem = "Salt"
+    chem = High_val(state,city)
     plot_w = water_graph(city)
     return render_template("success_w.html", p_text='The Dominant Chemical in the Water of your Area is  {}'.format(chem), graphJSON=plot_w)    
  
