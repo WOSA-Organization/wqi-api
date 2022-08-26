@@ -10,7 +10,7 @@ import plotly.express as px
 app = Flask(__name__,template_folder='templates')
 
 def water_graph(city):
-    dp = pd.read_csv('D:/Hackathons/psg/water.csv',encoding= 'unicode_escape')
+    dp = pd.read_csv('water.csv',encoding= 'unicode_escape')
     dp2 = dp[dp['District Name']==city].reset_index()
     la = []
     la = dp2['Quality Parameter'].unique()
@@ -21,7 +21,7 @@ def water_graph(city):
     return plot_w
 
 
-df = pd.read_csv('D:/Hackathons/Delta/water.csv',encoding= 'unicode_escape')
+df = pd.read_csv('water.csv',encoding= 'unicode_escape')
 
 #Encoding The IteM Type Column
 from sklearn.preprocessing import LabelEncoder
