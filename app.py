@@ -20,7 +20,7 @@ def water_graph(city):
     plot_w = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return plot_w
 
-<<<<<<< Updated upstream
+
 
 df = pd.read_csv('water.csv',encoding= 'unicode_escape')
 
@@ -60,13 +60,13 @@ def predict(inp):
     x_new=[[st,ct]]
     pred_new = classifier.predict(x_new)  
     return pred_new
-=======
+
 def High_val(state, city):
     df = pd.read_csv('D:/Hackathons/Delta/water.csv',encoding= 'unicode_escape')
     df2 = df[df['State Name'] == state]
     df2 = df2[df2['District Name'] == city]
     return df2["Quality Parameter"].value_counts().idxmax()
->>>>>>> Stashed changes
+
 # ROUTES
 @app.route('/')
 def home():
