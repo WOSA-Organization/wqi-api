@@ -8,7 +8,7 @@
 .banner{
     position: absolute;
     width: 40%;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: transparent !important;
@@ -16,7 +16,7 @@
 }
 .main{
     min-height: 100vh;
-    background-image: linear-gradient(rgba(10, 70, 37, 0.445),rgba(4, 9, 30, 0.774)), urlhttps://thumbs.dreamstime.com/b/plastic-pollution-ocean-underwater-shine-garbage-floating-sea-environmental-problem-plastic-pollution-ocean-180412275.jpg);
+    background-image: linear-gradient(rgba(10, 70, 37, 0.445),rgba(4, 9, 30, 0.774)), url(https://thumbs.dreamstime.com/b/plastic-pollution-ocean-underwater-shine-garbage-floating-sea-environmental-problem-plastic-pollution-ocean-180412275.jpg);
     background-position: center;
     background-size: cover;
   }
